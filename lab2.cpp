@@ -131,7 +131,10 @@ void task3() {
 
 void task4() {
     std::cout << std::endl << "--- Задание 4 (Задача 5) ---" << std::endl;
-    std::cout << "Введите символы через пробел (для завершения ввода нажмите Ctrl+Z и Enter в Windows или Ctrl+D в Linux): " << std::endl;
+    std::cout << "Введите символы через пробел "
+        << "(для завершения ввода нажмите Ctrl+Z "
+        << "и Enter в Windows или Ctrl+D в Linux): "
+        << std::endl;
 
     std::replace_copy_if(
         std::istream_iterator<char>(std::cin),
@@ -271,7 +274,7 @@ void task7() {
     }
 
     std::sort(d.begin(), d.end(),
-        [](const std::string& left, const std::string& right) {
+        [](const std::string left, const std::string right) {
             if (left.length() != right.length()) {
                 return left.length() > right.length();
             }
@@ -279,7 +282,7 @@ void task7() {
         });
 
     std::cout << "Результат: ";
-    for (const auto& s : d) {
+    for (const auto s : d) {
         std::cout << s << ' ';
     }
     std::cout << std::endl;
@@ -306,7 +309,7 @@ void task8() {
     }
 
     std::deque<std::string> d;
-    auto combine = [](const std::string& current, const std::string& previous) {
+    auto combine = [](const std::string current, const std::string previous) {
         return std::string(1, previous.front()) + current.back();
         };
 
@@ -315,7 +318,7 @@ void task8() {
     d.erase(d.begin());
 
     std::cout << "Результат (дек D): ";
-    for (const auto& s : d) {
+    for (const auto s : d) {
         std::cout << s << ' ';
     }
     std::cout << std::endl;
@@ -360,9 +363,10 @@ void task9() {
     for (int i = 0; i < numVecs; ++i) {
         int size = 0;
         while (true) {
-            std::cout << "Размер вектора V" << i + 1 << " (не менее " << n0 << "): ";
+            std::cout << "Размер вектора V" <<i+1<< "(не менее "<<n0<< "): ";
             if (std::cin >> size && size >= n0) break;
-            std::cout << "Ошибка: размер должен быть не меньше размера V0." << std::endl;
+            std::cout << "Ошибка: размер должен быть не меньше размера V0." 
+                << std::endl;
             std::cin.clear();
             std::cin.ignore(10000, '\n');
         }
@@ -423,13 +427,6 @@ void task10() {
     }
 
     std::cout << "Элемент : Количество" << std::endl;
-    for (auto it = m.begin(); it != m.end(); ++it) {
-        std::cout << it->first << " : " << it->second << std::endl;
-    }
-}
-    }
-
-    std::cout << "Ýëåìåíò : Êîëè÷åñòâî" << std::endl;
     for (auto it = m.begin(); it != m.end(); ++it) {
         std::cout << it->first << " : " << it->second << std::endl;
     }
