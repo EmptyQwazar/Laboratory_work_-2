@@ -386,7 +386,7 @@ void task9() {
     const std::set<int> set0(v0.begin(), v0.end());
     int count = 0;
 
-    for (const auto& v : vecs) {
+    for (const auto v : vecs) {
         const std::set<int> setV(v.begin(), v.end());
         if (std::includes(setV.begin(), setV.end(),
             set0.begin(), set0.end())) {
