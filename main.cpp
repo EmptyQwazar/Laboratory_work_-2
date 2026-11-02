@@ -8,22 +8,22 @@ int main() {
 
     int choice = -1;
     while (choice != 0) {
-        std::cout << std::endl << "=== ÌÅÍÞ ===" << std::endl
-            << "1. Çàäàíèå 1" << std::endl
-            << "2. Çàäàíèå 2" << std::endl
-            << "3. Çàäàíèå 3" << std::endl
-            << "4. Çàäàíèå 4" << std::endl
-            << "5. Çàäàíèå 5" << std::endl
-            << "6. Çàäàíèå 6" << std::endl
-            << "7. Çàäàíèå 7" << std::endl
-            << "8. Çàäàíèå 8" << std::endl
-            << "9. Çàäàíèå 9" << std::endl
-            << "10. Çàäàíèå 10" << std::endl
-            << "0. Âûõîä" << std::endl;
+        std::cout << std::endl << "=== ÐœÐ•ÐÐ® ===" << std::endl
+            << "1. Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 1" << std::endl
+            << "2. Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 2" << std::endl
+            << "3. Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 3" << std::endl
+            << "4. Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 4" << std::endl
+            << "5. Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 5" << std::endl
+            << "6. Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 6" << std::endl
+            << "7. Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 7" << std::endl
+            << "8. Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 8" << std::endl
+            << "9. Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 9" << std::endl
+            << "10. Ð—Ð°Ð´Ð°Ð½Ð¸Ðµ 10" << std::endl
+            << "0. Ð’Ñ‹Ñ…Ð¾Ð´" << std::endl;
 
-        std::cout << "Âûáîð: ";
+        std::cout << "Ð’Ñ‹Ð±Ð¾Ñ€: ";
         if (!(std::cin >> choice)) {
-            std::cout << "Îøèáêà ââîäà. Ââåäèòå ÷èñëî." << std::endl;
+            std::cout << "ÐžÑˆÐ¸Ð±ÐºÐ° Ð²Ð²Ð¾Ð´Ð°. Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð¾." << std::endl;
             std::cin.clear();
             std::cin.ignore(10000, '\n');
             continue;
@@ -40,8 +40,8 @@ int main() {
         case 8: task8(); break;
         case 9: task9(); break;
         case 10: task10(); break;
-        case 0: std::cout << "Âûõîä." << std::endl; break;
-        default: std::cout << "Íåâåðíûé ïóíêò." << std::endl; break;
+        case 0: std::cout << "Ð’Ñ‹Ñ…Ð¾Ð´." << std::endl; break;
+        default: std::cout << "ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð¿ÑƒÐ½ÐºÑ‚." << std::endl; break;
         }
     }
 
