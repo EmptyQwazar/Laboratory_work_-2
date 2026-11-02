@@ -1,32 +1,30 @@
 #include "lab2.h"
 
 void task1() {
-    std::cout << std::endl << "--- Çàäàíèå 1 (Çàäà÷à 3) ---" << std::endl;
+    std::cout << std::endl << "--- Ğ—Ğ°Ğ´Ğ°Ğ½Ğ¸Ğµ 1 (Ğ—Ğ°Ğ´Ğ°Ñ‡Ğ° 3) ---" << std::endl;
 
     int numElements = 0;
     while (true) {
-        std::cout << "Ââåäèòå ÷åòíîå êîëè÷åñòâî ıëåìåíòîâ: ";
+        std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ñ‡ĞµÑ‚Ğ½Ğ¾Ğµ ĞºĞ¾Ğ»Ğ¸Ñ‡ĞµÑÑ‚Ğ²Ğ¾ ÑĞ»ĞµĞ¼ĞµĞ½Ñ‚Ğ¾Ğ²: ";
         if (std::cin >> numElements && numElements > 0 && numElements % 2 == 0) {
             break;
         }
-        std::cout << "Îøèáêà: ââåäèòå ÷åòíîå ïîëîæèòåëüíîå ÷èñëî." << std::endl;
+        std::cout << "ĞÑˆĞ¸Ğ±ĞºĞ°: Ğ²Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ñ‡ĞµÑ‚Ğ½Ğ¾Ğµ Ğ¿Ğ¾Ğ»Ğ¾Ğ¶Ğ¸Ñ‚ĞµĞ»ÑŒĞ½Ğ¾Ğµ Ñ‡Ğ¸ÑĞ»Ğ¾." << std::endl;
         std::cin.clear();
         std::cin.ignore(10000, '\n');
     }
 
-    std::vector<int> v;
-    std::cout << "Ââåäèòå " << numElements << " ÷èñåë: ";
-    for (int i = 0; i < numElements; ++i) {
-        int val = 0;
-        while (!(std::cin >> val)) {
-            std::cout << "Îøèáêà: ââåäèòå ÷èñëî." << std::endl;
+    std::vector<int> v(numElements);
+    std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ " << numElements << " Ñ‡Ğ¸ÑĞµĞ»: ";
+    for (auto it = v.begin(); it != v.end(); ++it) {
+        while (!(std::cin >> *it)) {
+            std::cout << "ĞÑˆĞ¸Ğ±ĞºĞ°: Ğ²Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ñ†ĞµĞ»Ğ¾Ğµ Ñ‡Ğ¸ÑĞ»Ğ¾." << std::endl;
             std::cin.clear();
             std::cin.ignore(10000, '\n');
         }
-        v.push_back(val);
     }
 
-    std::cout << "Âåêòîğ V: ";
+    std::cout << "Ğ’ĞµĞºÑ‚Ğ¾Ñ€ V: ";
     for (auto it = v.begin(); it != v.end(); ++it) {
         std::cout << *it << ' ';
     }
@@ -34,11 +32,11 @@ void task1() {
 
     auto mid = v.begin() + v.size() / 2;
 
-    std::cout << "Âòîğàÿ ïîëîâèíà: ";
+    std::cout << "Ğ’Ñ‚Ğ¾Ñ€Ğ°Ñ Ğ¿Ğ¾Ğ»Ğ¾Ğ²Ğ¸Ğ½Ğ°: ";
     for (auto it = mid; it != v.end(); ++it) {
         std::cout << *it << ' ';
     }
-    std::cout << std::endl << "Ïåğâàÿ ïîëîâèíà: ";
+    std::cout << std::endl << "ĞŸĞµÑ€Ğ²Ğ°Ñ Ğ¿Ğ¾Ğ»Ğ¾Ğ²Ğ¸Ğ½Ğ°: ";
     for (auto it = v.begin(); it != mid; ++it) {
         std::cout << *it << ' ';
     }
@@ -46,48 +44,41 @@ void task1() {
 }
 
 void task2() {
-    std::cout << std::endl << "--- Çàäàíèå 2 (Çàäà÷à 3) ---" << std::endl;
+    std::cout << std::endl << "--- Ğ—Ğ°Ğ´Ğ°Ğ½Ğ¸Ğµ 2 (Ğ—Ğ°Ğ´Ğ°Ñ‡Ğ° 3) ---" << std::endl;
 
     int numElements = 0;
     while (true) {
-        std::cout << "Ââåäèòå êîëè÷åñòâî ıëåìåíòîâ (êğàòíîå 3): ";
+        std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ ĞºĞ¾Ğ»Ğ¸Ñ‡ĞµÑÑ‚Ğ²Ğ¾ ÑĞ»ĞµĞ¼ĞµĞ½Ñ‚Ğ¾Ğ² (ĞºÑ€Ğ°Ñ‚Ğ½Ğ¾Ğµ 3): ";
         if (std::cin >> numElements && numElements > 0 && numElements % 3 == 0) {
             break;
         }
-        std::cout << "Îøèáêà: ÷èñëî äîëæíî äåëèòüñÿ íà 3." << std::endl;
+        std::cout << "ĞÑˆĞ¸Ğ±ĞºĞ°: Ñ‡Ğ¸ÑĞ»Ğ¾ Ğ´Ğ¾Ğ»Ğ¶Ğ½Ğ¾ Ğ±Ñ‹Ñ‚ÑŒ Ğ¿Ğ¾Ğ»Ğ¾Ğ¶Ğ¸Ñ‚ĞµĞ»ÑŒĞ½Ñ‹Ğ¼ Ğ¸ Ğ´ĞµĞ»Ğ¸Ñ‚ÑŒÑÑ Ğ½Ğ° 3." << std::endl;
         std::cin.clear();
         std::cin.ignore(10000, '\n');
     }
 
-    std::list<int> l;
-    std::cout << "Ââåäèòå " << numElements << " ÷èñåë: ";
-    for (int i = 0; i < numElements; ++i) {
-        int val = 0;
-        while (!(std::cin >> val)) {
-            std::cout << "Îøèáêà: ââåäèòå ÷èñëî." << std::endl;
+    std::list<int> l(numElements);
+    std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ " << numElements << " Ñ‡Ğ¸ÑĞµĞ»: ";
+    for (auto it = l.begin(); it != l.end(); ++it) {
+        while (!(std::cin >> *it)) {
+            std::cout << "ĞÑˆĞ¸Ğ±ĞºĞ°: Ğ²Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ñ†ĞµĞ»Ğ¾Ğµ Ñ‡Ğ¸ÑĞ»Ğ¾." << std::endl;
             std::cin.clear();
             std::cin.ignore(10000, '\n');
         }
-        l.push_back(val);
     }
 
-    std::cout << "Èñõîäíûé ñïèñîê: ";
+    std::cout << "Ğ˜ÑÑ…Ğ¾Ğ´Ğ½Ñ‹Ğ¹ ÑĞ¿Ğ¸ÑĞ¾Ğº: ";
     for (auto it = l.begin(); it != l.end(); ++it) {
         std::cout << *it << ' ';
     }
     std::cout << std::endl;
 
-    const int thirdSize = numElements / 3;
-    std::vector<int> firstThird;
-    auto it = l.begin();
-    for (int i = 0; i < thirdSize; ++i) {
-        firstThird.push_back(*it);
-        ++it;
-    }
+    auto thirdIt = l.begin();
+    std::advance(thirdIt, numElements / 3);
 
-    l.insert(l.end(), firstThird.rbegin(), firstThird.rend());
+    l.insert(l.end(), std::make_reverse_iterator(thirdIt), l.rend());
 
-    std::cout << "Ğåçóëüòàò: ";
+    std::cout << "Ğ ĞµĞ·ÑƒĞ»ÑŒÑ‚Ğ°Ñ‚: ";
     for (auto listIt = l.begin(); listIt != l.end(); ++listIt) {
         std::cout << *listIt << ' ';
     }
@@ -95,32 +86,30 @@ void task2() {
 }
 
 void task3() {
-    std::cout << std::endl << "--- Çàäàíèå 3 (Çàäà÷à 10) ---" << std::endl;
+    std::cout << std::endl << "--- Ğ—Ğ°Ğ´Ğ°Ğ½Ğ¸Ğµ 3 (Ğ—Ğ°Ğ´Ğ°Ñ‡Ğ° 10) ---" << std::endl;
 
     int numElements = 0;
     while (true) {
-        std::cout << "Ââåäèòå ÷åòíîå êîëè÷åñòâî ıëåìåíòîâ: ";
+        std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ñ‡ĞµÑ‚Ğ½Ğ¾Ğµ ĞºĞ¾Ğ»Ğ¸Ñ‡ĞµÑÑ‚Ğ²Ğ¾ ÑĞ»ĞµĞ¼ĞµĞ½Ñ‚Ğ¾Ğ²: ";
         if (std::cin >> numElements && numElements > 0 && numElements % 2 == 0) {
             break;
         }
-        std::cout << "Îøèáêà: ÷èñëî äîëæíî áûòü ÷åòíûì." << std::endl;
+        std::cout << "ĞÑˆĞ¸Ğ±ĞºĞ°: Ñ‡Ğ¸ÑĞ»Ğ¾ Ğ´Ğ¾Ğ»Ğ¶Ğ½Ğ¾ Ğ±Ñ‹Ñ‚ÑŒ Ñ‡ĞµÑ‚Ğ½Ñ‹Ğ¼ Ğ¸ Ğ¿Ğ¾Ğ»Ğ¾Ğ¶Ğ¸Ñ‚ĞµĞ»ÑŒĞ½Ñ‹Ğ¼." << std::endl;
         std::cin.clear();
         std::cin.ignore(10000, '\n');
     }
 
-    std::list<int> l;
-    std::cout << "Ââåäèòå " << numElements << " ÷èñåë: ";
-    for (int i = 0; i < numElements; ++i) {
-        int val = 0;
-        while (!(std::cin >> val)) {
-            std::cout << "Îøèáêà: ââåäèòå ÷èñëî." << std::endl;
+    std::list<int> l(numElements);
+    std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ " << numElements << " Ñ‡Ğ¸ÑĞµĞ»: ";
+    for (auto it = l.begin(); it != l.end(); ++it) {
+        while (!(std::cin >> *it)) {
+            std::cout << "ĞÑˆĞ¸Ğ±ĞºĞ°: Ğ²Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ñ†ĞµĞ»Ğ¾Ğµ Ñ‡Ğ¸ÑĞ»Ğ¾." << std::endl;
             std::cin.clear();
             std::cin.ignore(10000, '\n');
         }
-        l.push_back(val);
     }
 
-    std::cout << "Èñõîäíûé ñïèñîê: ";
+    std::cout << "Ğ˜ÑÑ…Ğ¾Ğ´Ğ½Ñ‹Ğ¹ ÑĞ¿Ğ¸ÑĞ¾Ğº: ";
     for (auto it = l.begin(); it != l.end(); ++it) {
         std::cout << *it << ' ';
     }
@@ -130,16 +119,10 @@ void task3() {
     auto r = std::prev(l.end());
 
     for (int k = 0; k < numElements / 2; ++k) {
-        auto currentR = r;
-
-        if (k < numElements / 2 - 1) {
-            --r;
-        }
-
-        l.splice(i++, l, currentR);
+        l.splice(i++, l, r--);
     }
 
-    std::cout << "Ğåçóëüòàò: ";
+    std::cout << "Ğ ĞµĞ·ÑƒĞ»ÑŒÑ‚Ğ°Ñ‚: ";
     for (auto it = l.begin(); it != l.end(); ++it) {
         std::cout << *it << ' ';
     }
@@ -147,67 +130,48 @@ void task3() {
 }
 
 void task4() {
-    std::cout << std::endl << "Çàäàíèå 4 (Çàäà÷à 5)" << std::endl;
-
-    int numElements = 0;
-    while (true) {
-        std::cout << "Ââåäèòå êîëè÷åñòâî ñèìâîëîâ: ";
-        if (std::cin >> numElements && numElements > 0) {
-            break;
-        }
-        std::cout << "Îøèáêà: ââåäèòå ïîëîæèòåëüíîå ÷èñëî." << std::endl;
-        std::cin.clear();
-        std::cin.ignore(10000, '\n');
-    }
-
-    std::vector<char> v;
-    std::cout << "Ââåäèòå " << numElements << " ñèìâîëîâ: ";
-    for (int i = 0; i < numElements; ++i) {
-        char c = ' ';
-        std::cin >> c;
-        v.push_back(c);
-    }
-
-    std::cout << "Èñõîäíûé íàáîğ: ";
-    for (const char c : v) {
-        std::cout << c << ' ';
-    }
-    std::cout << std::endl << "Ğåçóëüòàò: ";
+    std::cout << std::endl << "--- Ğ—Ğ°Ğ´Ğ°Ğ½Ğ¸Ğµ 4 (Ğ—Ğ°Ğ´Ğ°Ñ‡Ğ° 5) ---" << std::endl;
+    std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ ÑĞ¸Ğ¼Ğ²Ğ¾Ğ»Ñ‹ Ñ‡ĞµÑ€ĞµĞ· Ğ¿Ñ€Ğ¾Ğ±ĞµĞ» (Ğ´Ğ»Ñ Ğ·Ğ°Ğ²ĞµÑ€ÑˆĞµĞ½Ğ¸Ñ Ğ²Ğ²Ğ¾Ğ´Ğ° Ğ½Ğ°Ğ¶Ğ¼Ğ¸Ñ‚Ğµ Ctrl+Z Ğ¸ Enter Ğ² Windows Ğ¸Ğ»Ğ¸ Ctrl+D Ğ² Linux): " << std::endl;
 
     std::replace_copy_if(
-        v.begin(), v.end(),
+        std::istream_iterator<char>(std::cin),
+        std::istream_iterator<char>(),
         std::ostream_iterator<char>(std::cout, " "),
-        [](char c) { return c >= '0' && c <= '9'; }, '_');
+        [](char c) { return c >= '0' && c <= '9'; },
+        '_'
+    );
     std::cout << std::endl;
+
+    std::cin.clear();
 }
 
 void task5() {
-    std::cout << std::endl << "Çàäàíèå 5 (Çàäà÷à 1)" << std::endl;
+    std::cout << std::endl << "--- Ğ—Ğ°Ğ´Ğ°Ğ½Ğ¸Ğµ 5 (Ğ—Ğ°Ğ´Ğ°Ñ‡Ğ° 1) ---" << std::endl;
 
     int numElements = 0;
     while (true) {
-        std::cout << "Ââåäèòå êîëè÷åñòâî ıëåìåíòîâ: ";
+        std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ ĞºĞ¾Ğ»Ğ¸Ñ‡ĞµÑÑ‚Ğ²Ğ¾ ÑĞ»ĞµĞ¼ĞµĞ½Ñ‚Ğ¾Ğ²: ";
         if (std::cin >> numElements && numElements > 0) {
             break;
         }
-        std::cout << "Îøèáêà: ââåäèòå ïîëîæèòåëüíîå ÷èñëî." << std::endl;
+        std::cout << "ĞÑˆĞ¸Ğ±ĞºĞ°: Ğ²Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ğ¿Ğ¾Ğ»Ğ¾Ğ¶Ğ¸Ñ‚ĞµĞ»ÑŒĞ½Ğ¾Ğµ Ñ‡Ğ¸ÑĞ»Ğ¾." << std::endl;
         std::cin.clear();
         std::cin.ignore(10000, '\n');
     }
 
     std::vector<int> v;
-    std::cout << "Ââåäèòå " << numElements << " ÷èñåë: ";
+    std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ " << numElements << " Ñ‡Ğ¸ÑĞµĞ»: ";
     for (int i = 0; i < numElements; ++i) {
         int val = 0;
         while (!(std::cin >> val)) {
-            std::cout << "Îøèáêà: ââåäèòå ÷èñëî." << std::endl;
+            std::cout << "ĞÑˆĞ¸Ğ±ĞºĞ°: Ğ²Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ñ‡Ğ¸ÑĞ»Ğ¾." << std::endl;
             std::cin.clear();
             std::cin.ignore(10000, '\n');
         }
         v.push_back(val);
     }
 
-    std::cout << "Èñõîäíûé âåêòîğ: ";
+    std::cout << "Ğ˜ÑÑ…Ğ¾Ğ´Ğ½Ñ‹Ğ¹ Ğ²ĞµĞºÑ‚Ğ¾Ñ€: ";
     for (const int x : v) {
         std::cout << x << ' ';
     }
@@ -221,7 +185,7 @@ void task5() {
         }
     }
 
-    std::cout << "Ğåçóëüòàò: ";
+    std::cout << "Ğ ĞµĞ·ÑƒĞ»ÑŒÑ‚Ğ°Ñ‚: ";
     for (const int x : v) {
         std::cout << x << ' ';
     }
@@ -229,39 +193,39 @@ void task5() {
 }
 
 void task6() {
-    std::cout << std::endl << "Çàäàíèå 6 (Çàäà÷à 1)" << std::endl;
+    std::cout << std::endl << "--- Ğ—Ğ°Ğ´Ğ°Ğ½Ğ¸Ğµ 6 (Ğ—Ğ°Ğ´Ğ°Ñ‡Ğ° 1) ---" << std::endl;
 
     int a = 0;
     int b = 0;
     while (true) {
-        std::cout << "Ââåäèòå ÷èñëî A: ";
+        std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ñ‡Ğ¸ÑĞ»Ğ¾ A: ";
         if (std::cin >> a) break;
-        std::cout << "Îøèáêà." << std::endl;
+        std::cout << "ĞÑˆĞ¸Ğ±ĞºĞ°." << std::endl;
         std::cin.clear();
         std::cin.ignore(10000, '\n');
     }
     while (true) {
-        std::cout << "Ââåäèòå ÷èñëî B: ";
+        std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ñ‡Ğ¸ÑĞ»Ğ¾ B: ";
         if (std::cin >> b) break;
-        std::cout << "Îøèáêà." << std::endl;
+        std::cout << "ĞÑˆĞ¸Ğ±ĞºĞ°." << std::endl;
         std::cin.clear();
         std::cin.ignore(10000, '\n');
     }
 
     int n1 = 0;
     while (true) {
-        std::cout << "Ââåäèòå ğàçìåğ V1 (íå ìåíåå 10): ";
+        std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ñ€Ğ°Ğ·Ğ¼ĞµÑ€ V1 (Ğ½Ğµ Ğ¼ĞµĞ½ĞµĞµ 10): ";
         if (std::cin >> n1 && n1 >= 10) break;
-        std::cout << "Îøèáêà." << std::endl;
+        std::cout << "ĞÑˆĞ¸Ğ±ĞºĞ°." << std::endl;
         std::cin.clear();
         std::cin.ignore(10000, '\n');
     }
 
     int n2 = 0;
     while (true) {
-        std::cout << "Ââåäèòå ğàçìåğ V2 (íå ìåíåå 10): ";
+        std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ñ€Ğ°Ğ·Ğ¼ĞµÑ€ V2 (Ğ½Ğµ Ğ¼ĞµĞ½ĞµĞµ 10): ";
         if (std::cin >> n2 && n2 >= 10) break;
-        std::cout << "Îøèáêà." << std::endl;
+        std::cout << "ĞÑˆĞ¸Ğ±ĞºĞ°." << std::endl;
         std::cin.clear();
         std::cin.ignore(10000, '\n');
     }
@@ -270,10 +234,10 @@ void task6() {
     std::vector<int> v2(n2, 0);
 
     std::fill(v1.begin(), v1.begin() + 5, a);
-    std::fill(v1.begin() + 5, v1.end(), b);
+    std::fill(v1.end() - 5, v1.end(), b);
 
     std::fill_n(v2.begin(), 5, a);
-    std::fill_n(v2.begin() + 5, n2 - 5, b);
+    std::fill_n(v2.end() - 5, 5, b);
 
     std::cout << "V1: ";
     for (const int x : v1) {
@@ -287,19 +251,19 @@ void task6() {
 }
 
 void task7() {
-    std::cout << std::endl << "Çàäàíèå 7 (Çàäà÷à 11)" << std::endl;
+    std::cout << std::endl << "--- Ğ—Ğ°Ğ´Ğ°Ğ½Ğ¸Ğµ 7 (Ğ—Ğ°Ğ´Ğ°Ñ‡Ğ° 11) ---" << std::endl;
 
     int numWords = 0;
     while (true) {
-        std::cout << "Ââåäèòå êîëè÷åñòâî ñëîâ: ";
+        std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ ĞºĞ¾Ğ»Ğ¸Ñ‡ĞµÑÑ‚Ğ²Ğ¾ ÑĞ»Ğ¾Ğ²: ";
         if (std::cin >> numWords && numWords > 0) break;
-        std::cout << "Îøèáêà." << std::endl;
+        std::cout << "ĞÑˆĞ¸Ğ±ĞºĞ°." << std::endl;
         std::cin.clear();
         std::cin.ignore(10000, '\n');
     }
 
     std::deque<std::string> d;
-    std::cout << "Ââåäèòå " << numWords << " ñëîâ: ";
+    std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ " << numWords << " ÑĞ»Ğ¾Ğ²: ";
     for (int i = 0; i < numWords; ++i) {
         std::string s = "";
         std::cin >> s;
@@ -314,7 +278,7 @@ void task7() {
             return left < right;
         });
 
-    std::cout << "Ğåçóëüòàò: ";
+    std::cout << "Ğ ĞµĞ·ÑƒĞ»ÑŒÑ‚Ğ°Ñ‚: ";
     for (const auto& s : d) {
         std::cout << s << ' ';
     }
@@ -322,19 +286,19 @@ void task7() {
 }
 
 void task8() {
-    std::cout << std::endl << "Çàäàíèå 8 (Çàäà÷à 2)" << std::endl;
+    std::cout << std::endl << "--- Ğ—Ğ°Ğ´Ğ°Ğ½Ğ¸Ğµ 8 (Ğ—Ğ°Ğ´Ğ°Ñ‡Ğ° 2) ---" << std::endl;
 
     int numWords = 0;
     while (true) {
-        std::cout << "Ââåäèòå êîëè÷åñòâî ñëîâ: ";
-        if (std::cin >> numWords && numWords > 0) break;
-        std::cout << "Îøèáêà." << std::endl;
+        std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ ĞºĞ¾Ğ»Ğ¸Ñ‡ĞµÑÑ‚Ğ²Ğ¾ ÑĞ»Ğ¾Ğ² (Ğ½Ğµ Ğ¼ĞµĞ½ĞµĞµ 2): ";
+        if (std::cin >> numWords && numWords >= 2) break;
+        std::cout << "ĞÑˆĞ¸Ğ±ĞºĞ°: Ğ²Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ñ‡Ğ¸ÑĞ»Ğ¾ Ğ½Ğµ Ğ¼ĞµĞ½ÑŒÑˆĞµ 2." << std::endl;
         std::cin.clear();
         std::cin.ignore(10000, '\n');
     }
 
     std::list<std::string> l;
-    std::cout << "Ââåäèòå " << numWords << " ñëîâ (çàãëàâíûìè): ";
+    std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ " << numWords << " ÑĞ»Ğ¾Ğ² (Ğ·Ğ°Ğ³Ğ»Ğ°Ğ²Ğ½Ñ‹Ğ¼Ğ¸): ";
     for (int i = 0; i < numWords; ++i) {
         std::string s = "";
         std::cin >> s;
@@ -350,7 +314,7 @@ void task8() {
         std::back_inserter(d), combine);
     d.erase(d.begin());
 
-    std::cout << "Ğåçóëüòàò (äåê D): ";
+    std::cout << "Ğ ĞµĞ·ÑƒĞ»ÑŒÑ‚Ğ°Ñ‚ (Ğ´ĞµĞº D): ";
     for (const auto& s : d) {
         std::cout << s << ' ';
     }
@@ -358,13 +322,13 @@ void task8() {
 }
 
 void task9() {
-    std::cout << std::endl << "--- Çàäàíèå 9 (Çàäà÷à 1) ---" << std::endl;
+    std::cout << std::endl << "--- Ğ—Ğ°Ğ´Ğ°Ğ½Ğ¸Ğµ 9 (Ğ—Ğ°Ğ´Ğ°Ñ‡Ğ° 1) ---" << std::endl;
 
     int n0 = 0;
     while (true) {
-        std::cout << "Ñêîëüêî ıëåìåíòîâ â V0? ";
+        std::cout << "Ğ¡ĞºĞ¾Ğ»ÑŒĞºĞ¾ ÑĞ»ĞµĞ¼ĞµĞ½Ñ‚Ğ¾Ğ² Ğ² V0? ";
         if (std::cin >> n0 && n0 > 0) break;
-        std::cout << "Îøèáêà." << std::endl;
+        std::cout << "ĞÑˆĞ¸Ğ±ĞºĞ°." << std::endl;
         std::cin.clear();
         std::cin.ignore(10000, '\n');
     }
@@ -373,9 +337,9 @@ void task9() {
     for (int i = 0; i < n0; ++i) {
         int val = 0;
         while (true) {
-            std::cout << "İëåìåíò V0: ";
+            std::cout << "Ğ­Ğ»ĞµĞ¼ĞµĞ½Ñ‚ V0: ";
             if (std::cin >> val) break;
-            std::cout << "Îøèáêà." << std::endl;
+            std::cout << "ĞÑˆĞ¸Ğ±ĞºĞ°." << std::endl;
             std::cin.clear();
             std::cin.ignore(10000, '\n');
         }
@@ -384,9 +348,9 @@ void task9() {
 
     int numVecs = 0;
     while (true) {
-        std::cout << "Ñêîëüêî âåêòîğîâ ïğîâåğÿòü (N)? ";
+        std::cout << "Ğ¡ĞºĞ¾Ğ»ÑŒĞºĞ¾ Ğ²ĞµĞºÑ‚Ğ¾Ñ€Ğ¾Ğ² Ğ¿Ñ€Ğ¾Ğ²ĞµÑ€ÑÑ‚ÑŒ (N)? ";
         if (std::cin >> numVecs && numVecs > 0) break;
-        std::cout << "Îøèáêà." << std::endl;
+        std::cout << "ĞÑˆĞ¸Ğ±ĞºĞ°." << std::endl;
         std::cin.clear();
         std::cin.ignore(10000, '\n');
     }
@@ -396,18 +360,18 @@ void task9() {
     for (int i = 0; i < numVecs; ++i) {
         int size = 0;
         while (true) {
-            std::cout << "Ğàçìåğ âåêòîğà V" << i + 1 << ": ";
-            if (std::cin >> size && size > 0) break;
-            std::cout << "Îøèáêà." << std::endl;
+            std::cout << "Ğ Ğ°Ğ·Ğ¼ĞµÑ€ Ğ²ĞµĞºÑ‚Ğ¾Ñ€Ğ° V" << i + 1 << " (Ğ½Ğµ Ğ¼ĞµĞ½ĞµĞµ " << n0 << "): ";
+            if (std::cin >> size && size >= n0) break;
+            std::cout << "ĞÑˆĞ¸Ğ±ĞºĞ°: Ñ€Ğ°Ğ·Ğ¼ĞµÑ€ Ğ´Ğ¾Ğ»Ğ¶ĞµĞ½ Ğ±Ñ‹Ñ‚ÑŒ Ğ½Ğµ Ğ¼ĞµĞ½ÑŒÑˆĞµ Ñ€Ğ°Ğ·Ğ¼ĞµÑ€Ğ° V0." << std::endl;
             std::cin.clear();
             std::cin.ignore(10000, '\n');
         }
         for (int j = 0; j < size; ++j) {
             int val = 0;
             while (true) {
-                std::cout << "İëåìåíò: ";
+                std::cout << "Ğ­Ğ»ĞµĞ¼ĞµĞ½Ñ‚: ";
                 if (std::cin >> val) break;
-                std::cout << "Îøèáêà." << std::endl;
+                std::cout << "ĞÑˆĞ¸Ğ±ĞºĞ°." << std::endl;
                 std::cin.clear();
                 std::cin.ignore(10000, '\n');
             }
@@ -425,17 +389,17 @@ void task9() {
             ++count;
         }
     }
-    std::cout << "Êîëè÷åñòâî ïîäõîäÿùèõ âåêòîğîâ: " << count << std::endl;
+    std::cout << "ĞšĞ¾Ğ»Ğ¸Ñ‡ĞµÑÑ‚Ğ²Ğ¾ Ğ¿Ğ¾Ğ´Ñ…Ğ¾Ğ´ÑÑ‰Ğ¸Ñ… Ğ²ĞµĞºÑ‚Ğ¾Ñ€Ğ¾Ğ²: " << count << std::endl;
 }
 
 void task10() {
-    std::cout << std::endl << "--- Çàäàíèå 10 (Çàäà÷à 1) ---" << std::endl;
+    std::cout << std::endl << "--- Ğ—Ğ°Ğ´Ğ°Ğ½Ğ¸Ğµ 10 (Ğ—Ğ°Ğ´Ğ°Ñ‡Ğ° 1) ---" << std::endl;
 
     int numElements = 0;
     while (true) {
-        std::cout << "Ââåäèòå êîëè÷åñòâî ıëåìåíòîâ: ";
+        std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ ĞºĞ¾Ğ»Ğ¸Ñ‡ĞµÑÑ‚Ğ²Ğ¾ ÑĞ»ĞµĞ¼ĞµĞ½Ñ‚Ğ¾Ğ²: ";
         if (std::cin >> numElements && numElements > 0) break;
-        std::cout << "Îøèáêà." << std::endl;
+        std::cout << "ĞÑˆĞ¸Ğ±ĞºĞ°." << std::endl;
         std::cin.clear();
         std::cin.ignore(10000, '\n');
     }
@@ -444,9 +408,9 @@ void task10() {
     for (int i = 0; i < numElements; ++i) {
         int val = 0;
         while (true) {
-            std::cout << "Ââåäèòå ÷èñëî: ";
+            std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ñ‡Ğ¸ÑĞ»Ğ¾: ";
             if (std::cin >> val) break;
-            std::cout << "Îøèáêà." << std::endl;
+            std::cout << "ĞÑˆĞ¸Ğ±ĞºĞ°." << std::endl;
             std::cin.clear();
             std::cin.ignore(10000, '\n');
         }
@@ -458,7 +422,14 @@ void task10() {
         m[*it]++;
     }
 
-    std::cout << "İëåìåíò : Êîëè÷åñòâî" << std::endl;
+    std::cout << "Ğ­Ğ»ĞµĞ¼ĞµĞ½Ñ‚ : ĞšĞ¾Ğ»Ğ¸Ñ‡ĞµÑÑ‚Ğ²Ğ¾" << std::endl;
+    for (auto it = m.begin(); it != m.end(); ++it) {
+        std::cout << it->first << " : " << it->second << std::endl;
+    }
+}
+    }
+
+    std::cout << "ÃÃ«Ã¥Ã¬Ã¥Ã­Ã² : ÃŠÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã®" << std::endl;
     for (auto it = m.begin(); it != m.end(); ++it) {
         std::cout << it->first << " : " << it->second << std::endl;
     }
