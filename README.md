@@ -95,7 +95,8 @@
 4. С помощью лямбда-выражения проверять каждый символ: если это цифра от '0' до '9', заменять ее на '_', иначе оставлять прежним. 
 
 Тестирование:
-<img width="249" height="90" alt="image" src="https://github.com/user-attachments/assets/0a783c64-65ef-42f2-b409-5e2f06b38015" />
+<img width="839" height="71" alt="image" src="https://github.com/user-attachments/assets/daabc99e-9f23-4cd6-be36-164860f76e3a" />
+
 
 
 Введите количество символов: 5
